@@ -9,12 +9,13 @@
 
 ## 🚀 How to Download & Install  
 
-1. Click the **`Code`** button (green, top right on GitHub).  
-2. Select **Download ZIP**.  
-3. Save the ZIP file (e.g., `proto-x02.zip`).  
-4. Open **Blender** → `Edit` → `Preferences` → `Add-ons` → `Install`.  
+1. Go to [https://gitlab.com/divya-darshan/proto-x02](https://gitlab.com/divya-darshan/proto-x02).
+2. Click the **`Code`** button (Blue top right on GitLab1).  
+3. Select **Download**.  
+4. Save the ZIP file (e.g., `proto-x02.zip`).  
+5. Open **Blender** → `Edit` → `Preferences` → `Add-ons` → `Install`.  
 5. Select the downloaded file.  
-6. Enable the add-on from the **Add-ons list**.  
+7. Enable the add-on from the **Add-ons list**.  
 
 ✅ The add-on is now available in the **Video Sequencer Sidebar** (`N` key).  
 
