@@ -1,207 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>proto-x02 Blender Add-on</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg-dark: #0d0d11;
-  --bg-card: #1a1a21;
-  --accent: #dd843b; /* Elegant royal blue */
-  --text-light: #e8e8e8;
-  --text-dim: #aaa;
-}
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--bg-dark);
-  color: var(--text-light);
-  line-height: 1.7;
-}
-nav {
-  position: sticky;
-  top: 0;
-  background: rgba(13,13,17,0.95);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  z-index: 10;
-}
-nav .logo {
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: var(--accent);
-  text-decoration: none;
-}
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-nav ul li a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-nav ul li a:hover {
-  color: var(--accent);
-}
-.hero {
-  background: linear-gradient(160deg, #11111a, #1b1b26);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 60vh;
-  padding: 2rem;
-}
-.hero-content {
-  max-width: 700px;
-}
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  color: var(--accent);
-}
-.hero p {
-  font-size: 1.2rem;
-  color: var(--text-dim);
-}
-.section {
-  padding: 4rem 1.5rem;
-  max-width: 1000px;
-  margin: auto;
-}
-.section h2 {
-  font-size: 1.9rem;
-  margin-bottom: 1.5rem;
-  color: var(--accent);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding-bottom: 0.5rem;
-}
-.feature-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  gap: 2rem;
-}
-.feature-card {
-  background: var(--bg-card);
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-}
-.feature-card .icon {
-  font-size: 1.8rem;
-  margin-bottom: 0.8rem;
-  color: var(--accent);
-}
-.btn-primary {
-  display: inline-block;
-  background: var(--accent);
-  color: #fff;
-  padding: 0.9rem 2rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.2s;
-}
-.btn-primary:hover {
-  background: #bd7c32;
-  transform: translateY(-2px);
-}
-.call-to-action {
-  background: var(--bg-card);
-  padding: 2.5rem;
-  border-radius: 12px;
-  text-align: center;
-  margin-top: 2rem;
-  border: 1px solid rgba(255,255,255,0.05);
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>proto-x02 Blender Add-on</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0d0d11;
+      --bg-card: #1a1a21;
+      --accent: #dd533b;
+      --text-light: #e8e8e8;
+      --text-dim: #aaa;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(13,13,17,0.95);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      z-index: 10;
+    }
+    nav .logo {
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+    .hero {
+      position: relative;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-light);
+      background: linear-gradient(rgba(0, 0, 0, 0.589)),
+                  url(img/back.jpg) 
+                  center/cover no-repeat;
+    }
+    .hero-content {
+      max-width: 800px;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      animation: vibrate 0.4s ease-in-out 1.2s 1;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      color: var(--text-dim);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes vibrate {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-4px); }
+      40% { transform: translateX(4px); }
+      60% { transform: translateX(-3px); }
+      80% { transform: translateX(3px); }
+      100% { transform: translateX(0); }
+    }
+    .section {
+      padding: 4rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h2 {
+      font-size: 1.9rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 0.5rem;
+    }
+    .feature-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+    .feature-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: var(--accent);
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.9rem 2rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover {
+      background: #bd3b32;
+      transform: translateY(-2px);
+    }
+    .call-to-action {
+      background: var(--bg-card);
+      padding: 2.5rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 2rem;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .call-to-action h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .responsive-video {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    iframe {
+      border-radius: 12px;
+      height: 600px;
+      width: 50%;
+      border: none;
+      box-shadow: 0 0px 0px rgba(0,0,0,0.3);
+    }
 
-
-
-.hero {
-  position: relative;
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  color: var(--text-light);
-  background: linear-gradient(rgba(0, 0, 0, 0.589)),
-              url(img/back.jpg) 
-              center/cover no-repeat;
-}
-
-.hero-content {
-  max-width: 800px;
-  animation: fadeIn 1.5s ease-out forwards;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--accent);
-  animation: vibrate 0.4s ease-in-out 1.2s 1; /* delay + one-time vibration */
-}
-
-.hero p {
-  font-size: 1.3rem;
-  color: var(--text-dim);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes vibrate {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-4px); }
-  40% { transform: translateX(4px); }
-  60% { transform: translateX(-3px); }
-  80% { transform: translateX(3px); }
-  100% { transform: translateX(0); }
-}
-
-.call-to-action h3 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-footer {
-  background: #111;
-  text-align: center;
-  padding: 2rem 1rem;
-  color: var(--text-dim);
-  font-size: 0.9rem;
-}
-footer a {
-  color: var(--accent);
-  text-decoration: none;
-}
-</style>
+    #readme-content {
+      background: var(--bg-card);
+      padding: 2rem;
+      border-radius: 12px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    #readme-content h1, 
+    #readme-content h2, 
+    #readme-content h3 {
+      color: var(--accent);
+    }
+  </style>
 </head>
 <body>
 
 <nav>
   <a href="#" class="logo">proto-x02</a>
   <ul>
-
     <li><a href="#download">Download</a></li>
     <li><a href="https://gitlab.com/divya-darshan/proto-x02">Repository</a></li>
   </ul>
@@ -214,12 +208,157 @@ footer a {
   </div>
 </section>
 
-
 <section id="download" class="section">
   <h2>Download & Install</h2>
   <p>Click below to download the ZIP, then in Blender: <strong>Edit → Preferences → Add-ons → Install</strong>.</p>
   <a href="https://gitlab.com/divya-darshan/proto-x02/-/archive/main/proto-x02-main.zip" class="btn-primary">Download proto-x02 ZIP</a>
 </section>
+
+<div class="responsive-video">
+  <iframe 
+    src="https://www.youtube.com/embed/PhdEk_RxkGQ?si=GNOL1jjgkqdrd5XH"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<section id="readme" class="section">
+  <h2>📖 Project Documentation</h2>
+  <div id="readme-content">
+
+    <h3>proto-x02 Blender Add-on</h3>
+    <p><strong>Author:</strong> Divya Darshan<br>
+    <strong>Inspired by:</strong> Poly Ford YouTube Channel<br>
+    <strong>Version:</strong> 2.8<br>
+    <strong>Category:</strong> Video Editing / Photogrammetry</p>
+
+    <hr>
+
+    <h3>🚀 How to Download</h3>
+    <ol>
+      <li>Click the <strong>Download</strong> button above.</li>
+      <li>Save the ZIP file locally.</li>
+      <li>In Blender: <code>Edit → Preferences → Add-ons → Install</code>.</li>
+      <li>Select the ZIP, click "Install", then enable the add-on.</li>
+      <li>Press <strong>N</strong> in the Video Sequencer to find the sidebar panel. Name - proto-x02</li>
+    </ol>
+    <p>✅ The add-on is now ready to use!</p>
+
+    <hr>
+
+    <h3>🔍 Overview</h3>
+    <p><strong>proto-x02</strong> automates video-to-3D workflows in Blender, including:</p>
+    <ul>
+      <li>Project setup & folder creation</li>
+      <li>Auto file placement</li>
+      <li>Video tracking & rendering automation</li>
+      <li>Project zipping via a custom key command</li>
+    </ul>
+    <p>This project is inspired by Poly Ford's videos on photogrammetry pipelines.</p>
+
+    <hr>
+
+    <h3>✨ Features</h3>
+
+    <h4>1. Video Import</h4>
+    <ul>
+      <li>Supports formats: .mp4, .mov, .avi, .mkv</li>
+      <li>Auto-copies video into <code>02 VIDEOS</code></li>
+      <li>Adds video to Blender Sequencer</li>
+    </ul>
+
+    <h4>2. Project Folder Automation</h4>
+    <ul>
+      <li>Auto-generates folders:
+        <ul>
+          <li><code>01 GLOMAP</code></li>
+          <li><code>02 VIDEOS</code></li>
+          <li><code>03 FFMPEG</code></li>
+          <li><code>04 SCENES</code></li>
+          <li><code>05 SCRIPT</code></li>
+        </ul>
+      </li>
+      <li>Copies placeholders and templates into folders</li>
+    </ul>
+
+    <h4>3. Auto-Tracking & Rendering</h4>
+    <ul>
+      <li>Runs <code>track.bat</code> from <code>05 SCRIPT</code></li>
+      <li>Tracks video and renders output to <code>04 SCENES</code></li>
+      <li>Buttons for start & cancel</li>
+    </ul>
+
+    <h4>4. Cleanup</h4>
+    <ul>
+      <li>Deletes previous video if removed from Sequencer</li>
+      <li>Keeps project clean</li>
+    </ul>
+
+    <h4>5. Custom Bot Command: <code>I</code></h4>
+    <ul>
+      <li>Packages entire project using 7-Zip</li>
+      <li>Creates a shareable archive in project root</li>
+    </ul>
+
+    <hr>
+
+    <h3>🧠 How It Works</h3>
+    <ol>
+      <li><strong>Open Video</strong>: Video added + folders auto-created.</li>
+      <li><strong>Track</strong>: Runs <code>track.bat</code> in terminal.</li>
+      <li><strong>Cleanup</strong>: Removes unused video files.</li>
+      <li><strong>Package</strong>: Press <code>I</code> to zip everything.</li>
+    </ol>
+
+    <hr>
+
+    <h3>📁 Folder Structure</h3>
+    <pre>
+Project_Root/
+├── 01 GLOMAP/
+├── 02 VIDEOS/
+├── 03 FFMPEG/
+├── 04 SCENES/
+├── 05 SCRIPT/
+└── your_project.blend
+    </pre>
+
+    <hr>
+
+    <h3>🙏 Acknowledgments</h3>
+    <ul>
+      <li>Inspired by Poly Ford</li>
+      <li>Uses Blender's Python API</li>
+      <li>7-Zip for compression</li>
+    </ul>
+
+    <hr>
+
+    <h3>⚠️ Notes</h3>
+    <ul>
+      <li>Tested only on <strong>Windows</strong></li>
+      <li>Requires saved <code>.blend</code> file</li>
+      <li>Ensure 7-Zip is in system PATH</li>
+    </ul>
+
+    <hr>
+
+    <h3>🤝 Community & Contributions</h3>
+    <p>This project is community-friendly and welcomes contributions!</p>
+    <ul>
+      <li>Improve UI & feedback system</li>
+      <li>Add support for more OS/video formats</li>
+      <li>Improve <code>track.bat</code> scripts</li>
+      <li>Share templates, presets, or example projects</li>
+    </ul>
+
+    <p>Let’s build a better photogrammetry toolset together! 🫂</p>
+
+  </div>
+</section>
+
 
 <section id="repo" class="section">
   <h2>Contribution</h2>
@@ -229,12 +368,4 @@ footer a {
     <p>Fork the repo, open issues, or suggest features to make proto-x02 even better.</p>
     <a href="https://gitlab.com/divya-darshan/proto-x02" target="_blank" class="btn-primary">Contribute on GitLab</a>
   </div>
-</section>
-
-<footer>
-  &copy; 2025 Divya Darshan. Inspired by PolyFord tutorials. <br>
-  <!-- Future videos will be available on my <a href="https://www.youtube.com/channel/UCievtjsCJMBN7EXj1QHZywQ" target="_blank">YouTube channel</a>. -->
-</footer>
-
-</body>
-</html>
+</section
